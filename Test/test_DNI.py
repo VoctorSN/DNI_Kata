@@ -1,32 +1,16 @@
-from src.dni import Dni
-import random
-    
+from src.Dni import Dni
 
-    def prettyFormatter(condition, message):
-        print(f"{Colors.OKGREEN} {message} {Colors.ENDC}"
-                  if condition
-                  else f"{Colors.FAIL} {message} {Colors.ENDC}")
+def check_numero():
+    assert Dni().check_numero('77550032')
+    assert Dni().check_numero('3123123123131')
+    assert Dni().check_numero('123,1233')
 
-    ### Casos test ALEATORIOS ###
+def test_correctos():
+    assert Dni().check_dni('77550032N')
+    assert Dni().check_dni('77422360J')
+    assert Dni().check_dni('39496391D')
 
-    casosTest = []
-    numeroCasos = 25
-
-    for i in range(1, numeroCasos + 1):
-        caso = ""
-        for j in range(1, 9):
-            # random.randrange(start, stop[, step])
-            # numeroAleatorio = random.randint(0, 9)
-            # ASCII 48-57 = 0-9    65-90 = A-Z   58 = ":"
-            # generamos un numero aleatorio entre 48 y 58
-            caracterAscii = random.randrange(48, 58 + 1, 1)
-            # convertimos el numero ASCII a caracter. 
-            # chr() toma el argumento como codigo ASCII de un caracter
-            caso = caso + chr(caracterAscii)
-        # en la ultima posicion añado una letra A-Z
-        caso = caso + chr(random.randrange(65, 90 + 1, 1))
-        casosTest = casosTest + [caso]
-
+"""
     print("\n## CASOS TEST ALEATORIOS ##\n")
 
     print(casosTest)
@@ -71,4 +55,4 @@ import random
         # print("Letra --->", dni.getLetraSana())
         # print("La letra es", dni.obtenerLetra())
         prettyFormatter(dni.getNumeroSano(), dni.getDni())
-        prettyFormatter(dni.getLetraSana(), dni.obtenerLetra())
+        prettyFormatter(dni.getLetraSana(), dni.obtenerLetra())"""

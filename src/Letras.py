@@ -1,4 +1,8 @@
-from class_bcolors_enum import Colors
+
+if __name__ == '__main__':
+    from class_bcolors_enum import Colors
+else:
+    from class_bcolors_enum import Colors
 
 
 class Letra:
@@ -63,7 +67,7 @@ if __name__ == "__main__":
         f"\nLa letra asignada a la posicion 33 es:  {Colors.BOLD}{Colors.UNDERLINE}{Colors.FAIL}{Letras.get_Letra_by_Position(33)}{Colors.ENDC}"
     )
     print(
-        f"\nLa letra de 34343434 es: {Colors.OKGREEN}{Letras.get_Letra_by_DNI(34343434)}{Colors.ENDC}"
+        f"\nLa letra de 77422360 es: {Colors.OKGREEN}{Letras.get_Letra_by_DNI(77422360)}{Colors.ENDC}"
     )
     print(
         "\nLa letra L esta en letras:  {}{}{}".format(
