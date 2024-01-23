@@ -30,10 +30,10 @@ class Letra:
         ]
 
     def get_Letras(self) -> list:
-        return self.letras
+        return self.letras[:]
 
-    def print_Letras(self):
-        print(self.get_Letras())
+    def __repr__(self) -> str:
+        return str(self.get_Letras())
 
     def get_Letra_by_Position(self, posicion: int) -> str:
         try:
@@ -54,7 +54,7 @@ class Letra:
 if __name__ == "__main__":
     Letras = Letra()
     print(f"\nLas letras son : {Colors.HEADER}")
-    Letras.print_Letras()
+    print(Letras)
     print(
         f"{Colors.ENDC}\nLa letra asignada a la posicion 4 es: {Colors.OKGREEN}"
         + Letras.get_Letra_by_Position(4) + Colors.ENDC
