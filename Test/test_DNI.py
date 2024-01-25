@@ -1,14 +1,27 @@
-from src.Dni import Dni
+from src.dni import Dni
 
-def check_numero():
-    assert Dni().check_numero('77550032')
-    assert Dni().check_numero('3123123123131')
-    assert Dni().check_numero('123,1233')
+def test_repr():
+    assert repr(Dni('77550032n')) == '77550032n'
 
-def test_correctos():
-    assert Dni().check_dni('77550032N')
-    assert Dni().check_dni('77422360J')
-    assert Dni().check_dni('39496391D')
+def test_check_numero():
+    assert Dni('77550032n').check_numero()
+    assert not Dni('3123123123131n').check_numero()
+    assert not Dni('123,1233m').check_numero()
+
+def test_check_letra():
+    assert Dni('77550032n').check_letra()
+    assert not Dni('3123123123131ñ').check_letra()
+    assert not Dni('123,1233').check_letra()
+
+def test_dni_correctos():
+    assert Dni('77550032N').check_dni()
+    assert Dni('77422360J').check_dni()
+    assert Dni('39496391D').check_dni()
+
+def test_dni_incorrectos():
+    assert not Dni('5353434435345345n').check_dni()
+    assert not Dni('77422360r').check_dni()
+    assert not Dni('39496391ñ').check_dni()
 
 """
     print("\n## CASOS TEST ALEATORIOS ##\n")
