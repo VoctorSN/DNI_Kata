@@ -54,12 +54,12 @@ class Dni_letter:
     def __repr__(self) -> str:
         return str(self.get_posible_letters())
 
-    def get_letter_by_position(self, posicion: int) -> str:
+    def get_letter_by_position(self, position: int) -> str:
         """
         Devuelve la letra asignada a una posicion
         """
         try:
-            return self.posible_letters[posicion]
+            return self.posible_letters[position]
         except IndexError:
             return "Posicion fuera de rango"
 
