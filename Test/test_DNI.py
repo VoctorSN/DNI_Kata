@@ -4,24 +4,24 @@ def test_repr():
     assert repr(Dni('77550032n')) == '77550032n'
 
 def test_check_numero():
-    assert Dni('77550032n').check_numero()
-    assert not Dni('3123123123131n').check_numero()
-    assert not Dni('123,1233m').check_numero()
+    assert Dni('77550032n').is_a_correct_number()
+    assert not Dni('3123123123131n').is_a_correct_number()
+    assert not Dni('123,1233m').is_a_correct_number()
 
 def test_check_letra():
-    assert Dni('77550032n').check_letra()
-    assert not Dni('3123123123131ñ').check_letra()
-    assert not Dni('123,1233').check_letra()
+    assert Dni('77550032n').is_a_correct_letter()
+    assert not Dni('3123123123131ñ').is_a_correct_letter()
+    assert not Dni('123,1233').is_a_correct_letter()
 
 def test_dni_correctos():
-    assert Dni('77550032N').check_dni()
-    assert Dni('77422360J').check_dni()
-    assert Dni('39496391D').check_dni()
+    assert Dni('77550032N').is_a_correct_dni()
+    assert Dni('77422360J').is_a_correct_dni()
+    assert Dni('39496391D').is_a_correct_dni()
 
 def test_dni_incorrectos():
-    assert not Dni('5353434435345345n').check_dni()
-    assert not Dni('77422360r').check_dni()
-    assert not Dni('39496391ñ').check_dni()
+    assert not Dni('5353434435345345n').is_a_correct_dni()
+    assert not Dni('77422360r').is_a_correct_dni()
+    assert not Dni('39496391ñ').is_a_correct_dni()
 
 """
     print("\n## CASOS TEST ALEATORIOS ##\n")
